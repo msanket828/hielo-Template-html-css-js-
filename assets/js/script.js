@@ -17,25 +17,30 @@ $('.banner-slider').slick({
 var hamburger=document.querySelector(".hamburger"),
 		close=document.querySelector(".close"),
 		navBar=document.querySelector(".nav-links"),
-		html=document.querySelector("html");
+		nabLink=document.querySelectorAll(".nav-link");	
 
-//initially we dont want tot show navBar
-navBar.classList.add('active');
 
+nabLink.forEach(function(link) {
+	link.addEventListener('click',function() {
+		if(navBar.classList.contains('active')) {
+			navBar.classList.remove('active');
+		}
+	})
+})
 //click event on hamburger icon
-hamburger.addEventListener('click',function() {	
-	navBar.classList.toggle('active');
+hamburger.addEventListener('click',function() {
+	
 	if(!navBar.classList.contains('active')) {
-		html.classList.add('overflow-hidden');
+		navBar.classList.add('active');
 	}
 });
 
 //click event on close button to close click menu
 close.addEventListener('click',function() {
-	navBar.classList.add('active');	
-	if(html.classList.contains('overflow-hidden')) {
-		html.classList.remove('overflow-hidden');
-	}
+	// navBar.classList.add('active');	
+	if(navBar.classList.contains('active')) {
+		navBar.classList.remove('active');
+	}	
 })
 
 

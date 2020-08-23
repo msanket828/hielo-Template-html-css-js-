@@ -386,25 +386,18 @@ footer h5 {
 }
 
 .nav-links {
-  position: absolute;
+  display: none;
+  position: fixed;
   background: #211818;   
-  height: 660px;
+  height: 100%;
   min-width: 20%;
   top: 0%;
-  right:0%;
-  /* animation-name: navbar;
-  animation-timing-function: ease;
-  animation-duration: .52s;
-  animation-fill-mode: forwards; */
+  right:0%;  
+  transition: all .2s ease;
 }
 
-/* @keyframes navbar {
-  0% { top: -100%;}
-  100% { top: 0%;}
-} */
-
  .nav-links.active {
-  display: none;
+  display: block;
 }
 
 .nav-links li{
@@ -421,8 +414,8 @@ footer h5 {
 }
 
 .close {
-  font-size: 25px;
-  padding: 0 10px 0 0;
+  font-size: 35px;
+  padding: 10px 50px 0 0;
   color: #fff;
 }
 
